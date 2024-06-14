@@ -15,6 +15,7 @@ public class LetterBtnSelectClick : MonoBehaviour
     void Start()
     {
         letterAudio = GetComponent<AudioSource>();
+        letterAudio.playOnAwake = false;
         button.onClick.AddListener(() => OnButtonClick(letter));
     }
 

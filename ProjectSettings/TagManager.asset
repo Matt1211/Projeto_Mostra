@@ -7,6 +7,7 @@ TagManager:
   - FriendlyNPC
   - EnemyNPC
   - FriendlyQuiz_1
+  - Surface
   layers:
   - Default
   - TransparentFX
