@@ -8,6 +8,15 @@ TagManager:
   - EnemyNPC
   - FriendlyQuiz_1
   - Surface
+  - QuizTask_1
+  - QuizTask_2
+  - QuizTask_3
+  - QuizTask_4
+  - TaskSuccess
+  - SunnyBunny
+  - EnemyNPC_head
+  - Froggy
+  - BunnyTask
   layers:
   - Default
   - TransparentFX
@@ -15,6 +24,7 @@ TagManager:
   - 
   - Water
   - UI
+  - Foreground
   - 
   - 
   - 
@@ -39,8 +49,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - Player
   m_SortingLayers:
   - name: Background
     uniqueID: 1996016199

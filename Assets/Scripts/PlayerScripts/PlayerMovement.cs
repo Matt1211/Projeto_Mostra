@@ -2,13 +2,15 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 3.25f; // Movement speed
-    public float jumpSpeed = 21f;   // Jump force
+    public float moveSpeed = 2.9f; // Movement speed
+    public float jumpSpeed = 75f;   // Jump force
     private bool unlockedJump = true;
     private bool isGrounded = true;
     private bool facingRight = true;
     private Rigidbody2D rb;         // Reference to the Rigidbody2D
     public Animator animator;
+    public AudioSource jumpSfx;
+    public GameObject player;
 
     void Start()
     {
@@ -45,12 +47,18 @@ public class PlayerMovement : MonoBehaviour
         {
             // Apply upward force for jumping
             rb.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
+            jumpSfx.Play();
         }
+
+        animator.SetBool("player_jumping", !isGrounded);
+        animator.SetFloat("player_speed_vertical", playerVelocity.y);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Surface"))
+        var collisionGameObject = collision.gameObject;
+
+        if (collisionGameObject.CompareTag("Surface"))
         {
             isGrounded = true;
         }

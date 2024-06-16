@@ -31,15 +31,22 @@ public class NPC_dialogue : MonoBehaviour
     public AudioClip npcTaskClip;
     public AudioClip successClip;
     public AudioClip failureClip;
+    public GameObject taskScoreboad;
+    public GameObject taskScorebox;
+    public GameObject npcTooltip;
 
     private Dictionary<string, string> npcDialogues = new Dictionary<string, string>()
     {
         {"Coelho" , "Olá amigo! Posso te ensinar a técnica do pulo! Mas apenas se você usar as letras para formar meu nome! Me chamo Coelho!"},
+        {"Sapo", "Oi amigo! Eu sou o Sapo! Vi que você está ajudando a floresta! Você gosta de pular? Repita comigo: PULAR! Se você vencer esse desafio, vamos viajar juntos!" },
+        {"Esquilo", "Ei amigo! Cuidado! Você verá que existem cogumelos que estão tentando acabar com a nossa graminha verde! Se você puder usar seu pulo nesses cogumelos, poderá deixar a floresta ainda mais VERDE! Repita: VERDE!" },
     };
 
     private Dictionary<string, NPC_Task> npcTasks = new Dictionary<string, NPC_Task>()
     {
         {"Coelho", new NPC_Task("Coelho") },
+        {"Sapo", new NPC_Task("Pular") },
+        {"Esquilo", new NPC_Task("Verde") },
     };
 
     private void Start()
@@ -53,29 +60,42 @@ public class NPC_dialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && playerIsClose)
-        {
-            if (!npcTask.completed)
-            {
-                if (dialoguePanel.activeInHierarchy)
-                {
-                    ZeroText();
-                }
-                else
-                {
-                    PlayDialogue();
-                    dialoguePanel.SetActive(true);
-                    npcAudio.Play();
-                }
-            }
-        }
 
-        if (Input.GetKeyDown(KeyCode.Return) && playerIsClose
+        if (Time.timeScale != 0)
+        {
+            if (playerIsClose && !npcTask.completed)
+            {
+                npcTooltip.SetActive(true);
+            }
+            else
+            {
+                npcTooltip.SetActive(false);
+            }
+
+            if (Input.GetKeyDown(KeyCode.Return) && playerIsClose
             && dialoguePanel.activeInHierarchy
             && !npcTask.completed)
-        {
-            ZeroText();
-            TaskStart(npcTask);
+            {
+                ZeroText();
+                TaskStart(npcTask);
+            }
+
+            if (Input.GetKeyDown(KeyCode.E) && playerIsClose)
+            {
+                if (!npcTask.completed)
+                {
+                    if (dialoguePanel.activeInHierarchy)
+                    {
+                        ZeroText();
+                    }
+                    else
+                    {
+                        PlayDialogue();
+                        dialoguePanel.SetActive(true);
+                        npcAudio.Play();
+                    }
+                }
+            }
         }
     }
 
@@ -118,18 +138,38 @@ public class NPC_dialogue : MonoBehaviour
     {
         if (resultText.Trim().ToLower() == npcTask.validWord.ToLower())
         {
-            npcTask.completed = true;
-            npcAudio.clip = successClip;
-            npcAudio.Play();
-            StartCoroutine(GameManagerScript.instance.ResumeGameAfterDelay(2));
-            taskPanel.SetActive(false);
+            TaskSuccess();
         }
         else
         {
-            npcTask.completed = false;
-            npcAudio.clip = failureClip;
-            npcAudio.Play();
-            taskResultText.text = "";
+            TaskFailed();
         }
+    }
+
+    private void TaskSuccess()
+    {
+        npcTask.completed = true;
+        npcAudio.clip = successClip;
+        npcAudio.Play();
+        taskScoreboad.SetActive(true);
+        taskScorebox.SetActive(true);
+        TaskSuccessSfx.instance.PlayTaskSuccessSfx();
+        StartCoroutine(HideTaskScoreBoxAfterDelay(1.8f));
+        StartCoroutine(GameManagerScript.instance.ResumeGameAfterDelay(2));
+        taskPanel.SetActive(false);
+    }
+
+    private void TaskFailed()
+    {
+        npcTask.completed = false;
+        npcAudio.clip = failureClip;
+        npcAudio.Play();
+        taskResultText.text = "";
+    }
+
+    private IEnumerator HideTaskScoreBoxAfterDelay(float delay)
+    {
+        yield return new WaitForSecondsRealtime(delay);
+        taskScorebox.SetActive(false);
     }
 }
