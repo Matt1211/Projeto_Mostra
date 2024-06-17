@@ -12,7 +12,6 @@ public class EnemyKiller : MonoBehaviour
         if (collision.gameObject.CompareTag("EnemyNPC"))
         {
             var enemy = collision.gameObject.GetComponent<EnemyBehavior>();
-            audioSource = GetComponent<AudioSource>();
             audioSource.clip = enemyDeathSfx;
             audioSource.Play();
             enemy.KillEnemy();

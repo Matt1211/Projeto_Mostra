@@ -15,14 +15,14 @@ public class GameManagerScript : MonoBehaviour
 
     private void Awake()
     {
-
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject);
         }
-        else
+        else if (instance != this)
         {
-            Destroy(instance);
+            Destroy(gameObject);
         }
 
         InitialSetup();

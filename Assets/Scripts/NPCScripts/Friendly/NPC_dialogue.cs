@@ -40,6 +40,9 @@ public class NPC_dialogue : MonoBehaviour
         {"Coelho" , "Olá amigo! Posso te ensinar a técnica do pulo! Mas apenas se você usar as letras para formar meu nome! Me chamo Coelho!"},
         {"Sapo", "Oi amigo! Eu sou o Sapo! Vi que você está ajudando a floresta! Você gosta de pular? Repita comigo: PULAR! Se você vencer esse desafio, vamos viajar juntos!" },
         {"Esquilo", "Ei amigo! Cuidado! Você verá que existem cogumelos que estão tentando acabar com a nossa graminha verde! Se você puder usar seu pulo nesses cogumelos, poderá deixar a floresta ainda mais VERDE! Repita: VERDE!" },
+        {"Coelho2", "Amigo! O Sapo tinha uma mensagem para mim, certo? Deve estar com frio! Precisamos de um CASACO!" },
+        {"Sapo2", "Chegamos na Nevasca! Diga ao meu amigo Coelho no final do percurso que sinto muito frio aqui! Repito: FRIIIOOO!" },
+        {"Esquilo2", "Amigo me ajude! As raposas são velozes na neve! Escutou? NE-VE!" }
     };
 
     private Dictionary<string, NPC_Task> npcTasks = new Dictionary<string, NPC_Task>()
@@ -47,6 +50,9 @@ public class NPC_dialogue : MonoBehaviour
         {"Coelho", new NPC_Task("Coelho") },
         {"Sapo", new NPC_Task("Pular") },
         {"Esquilo", new NPC_Task("Verde") },
+        {"Coelho2", new NPC_Task("Casaco") },
+        {"Sapo2", new NPC_Task("Frio") },
+        {"Esquilo2", new NPC_Task("Neve") }
     };
 
     private void Start()
