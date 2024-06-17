@@ -2048,6 +2048,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageNameBar: {fileID: 1130735198}
   pauseButton: {fileID: 871408124}
+  taskLevel1: {fileID: 0}
+  taskLevel2: {fileID: 0}
+  taskLevel3: {fileID: 0}
 --- !u!82 &1298821583
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3025,6 +3028,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1298821580}
     m_Modifications:
+    - target: {fileID: 1206430687580932788, guid: 97f08c80a1a224849a8afe3557f83278, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206430687580932788, guid: 97f08c80a1a224849a8afe3557f83278, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -856677271
+      objectReference: {fileID: 0}
     - target: {fileID: 2777201680175155891, guid: 97f08c80a1a224849a8afe3557f83278, type: 3}
       propertyPath: m_Material
       value: 
@@ -3903,6 +3914,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Surface
       objectReference: {fileID: 0}
+    - target: {fileID: 2109661037088227618, guid: 1908ea4ac054eda44bf48d3b8c8d94db, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2109661037088227618, guid: 1908ea4ac054eda44bf48d3b8c8d94db, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5642665048454272029, guid: 1908ea4ac054eda44bf48d3b8c8d94db, type: 3}
       propertyPath: m_LocalPosition.x
       value: 30.25
@@ -3999,26 +4018,6 @@ PrefabInstance:
     - target: {fileID: 2523825442325759255, guid: 6b21b518c7b96a7419372871322f8aab, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 2523825442325759255, guid: 6b21b518c7b96a7419372871322f8aab, type: 3}
-      propertyPath: m_Layer
-      value: 31
-      objectReference: {fileID: 0}
-    - target: {fileID: 2523825442325759255, guid: 6b21b518c7b96a7419372871322f8aab, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2523825442325759255, guid: 6b21b518c7b96a7419372871322f8aab, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4421091024212065937, guid: 6b21b518c7b96a7419372871322f8aab, type: 3}
-      propertyPath: walkSfx
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8978770852551945831, guid: 6b21b518c7b96a7419372871322f8aab, type: 3}
-      propertyPath: m_Layer
-      value: 31
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
