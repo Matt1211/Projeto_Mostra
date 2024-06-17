@@ -3,14 +3,28 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - FriendlyNPC
+  - EnemyNPC
+  - FriendlyQuiz_1
+  - Surface
+  - QuizTask_1
+  - QuizTask_2
+  - QuizTask_3
+  - QuizTask_4
+  - TaskSuccess
+  - SunnyBunny
+  - EnemyNPC_head
+  - Froggy
+  - BunnyTask
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Background
   - Water
   - UI
+  - Foreground
   - 
   - 
   - 
@@ -35,9 +49,23 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - Player
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1996016199
+    locked: 0
+  - name: Midground
+    uniqueID: 1241528727
+    locked: 0
+  - name: Sub_Foreground
+    uniqueID: 3940748967
+    locked: 0
+  - name: Foreground
+    uniqueID: 3438290025
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 4254110361
     locked: 0
