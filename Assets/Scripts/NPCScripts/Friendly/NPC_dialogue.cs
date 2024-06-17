@@ -42,7 +42,10 @@ public class NPC_dialogue : MonoBehaviour
         {"Esquilo", "Ei amigo! Cuidado! Você verá que existem cogumelos que estão tentando acabar com a nossa graminha verde! Se você puder usar seu pulo nesses cogumelos, poderá deixar a floresta ainda mais VERDE! Repita: VERDE!" },
         {"Coelho2", "Amigo! O Sapo tinha uma mensagem para mim, certo? Deve estar com frio! Precisamos de um CASACO!" },
         {"Sapo2", "Chegamos na Nevasca! Diga ao meu amigo Coelho no final do percurso que sinto muito frio aqui! Repito: FRIIIOOO!" },
-        {"Esquilo2", "Amigo me ajude! As raposas são velozes na neve! Escutou? NE-VE!" }
+        {"Esquilo2", "Amigo me ajude! As raposas são velozes na neve! Escutou? NE-VE!" },
+        {"Coelho3", "Eu acho essa paisagem linda! E sei que você acha o mesmo! Repete comigo!" },
+        {"Esquilo3", "Vamos para o mar! Você entende o que digo? Se sim, repita e vamos comigo!" },
+        {"Sapo3", "Oi amigo! Eu digo o que vejo: A ilha tem muitas pedras! ... Poderia me lembrar o que eu disse?" }
     };
 
     private Dictionary<string, NPC_Task> npcTasks = new Dictionary<string, NPC_Task>()
@@ -52,7 +55,10 @@ public class NPC_dialogue : MonoBehaviour
         {"Esquilo", new NPC_Task("Verde") },
         {"Coelho2", new NPC_Task("Casaco") },
         {"Sapo2", new NPC_Task("Frio") },
-        {"Esquilo2", new NPC_Task("Neve") }
+        {"Esquilo2", new NPC_Task("Neve") },
+        {"Coelho3", new NPC_Task("Eu acho essa paisagem linda!") },
+        {"Esquilo3", new NPC_Task("Vamos para o mar!") },
+        {"Sapo3", new NPC_Task("A ilha tem muitas pedras") }
     };
 
     private void Start()
