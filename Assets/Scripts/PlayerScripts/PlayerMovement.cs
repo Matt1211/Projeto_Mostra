@@ -22,6 +22,12 @@ public class PlayerMovement : MonoBehaviour
         // Get horizontal input (left/right arrow keys or A/D)
         float inputX = Input.GetAxis("Horizontal");
 
+        if (transform.position.y < -17)
+        {
+            // Teleport the player back to the initial position
+            transform.position = new Vector2(-5.75f, -3.41f);
+        }
+
         // Move the player horizontally
         Vector2 playerVelocity = rb.velocity;
         playerVelocity.x = inputX * moveSpeed;
