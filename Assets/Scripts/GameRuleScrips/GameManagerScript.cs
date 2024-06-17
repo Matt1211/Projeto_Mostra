@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManagerScript : MonoBehaviour
@@ -77,7 +78,8 @@ public class GameManagerScript : MonoBehaviour
             taskLevel2.activeInHierarchy &&
             taskLevel3.activeInHierarchy)
         {
-            //advance to next level
+            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+            SceneManager.LoadScene(currentSceneIndex + 1);
         }
     }
 

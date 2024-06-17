@@ -1957,9 +1957,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageNameBar: {fileID: 6423295807248724280}
   pauseButton: {fileID: 340537842230154214}
-  taskLevel1: {fileID: 0}
-  taskLevel2: {fileID: 0}
-  taskLevel3: {fileID: 0}
+  taskLevel1: {fileID: 6834452940080690145}
+  taskLevel2: {fileID: 1305050923562038572}
+  taskLevel3: {fileID: 8657000613215621719}
 --- !u!82 &1298821583
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10136,6 +10136,10 @@ PrefabInstance:
     - target: {fileID: 2523825442325759255, guid: 6b21b518c7b96a7419372871322f8aab, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3531210148132306319, guid: 6b21b518c7b96a7419372871322f8aab, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
