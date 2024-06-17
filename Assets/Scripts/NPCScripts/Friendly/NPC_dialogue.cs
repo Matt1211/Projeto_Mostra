@@ -163,6 +163,7 @@ public class NPC_dialogue : MonoBehaviour
         StartCoroutine(HideTaskScoreBoxAfterDelay(1.8f));
         StartCoroutine(GameManagerScript.instance.ResumeGameAfterDelay(2));
         taskPanel.SetActive(false);
+        StartCoroutine(GameManagerScript.instance.LoadNextLevel(5));
     }
 
     private void TaskFailed()

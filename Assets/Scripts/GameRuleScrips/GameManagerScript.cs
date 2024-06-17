@@ -19,7 +19,6 @@ public class GameManagerScript : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else if (instance != this)
         {
@@ -72,8 +71,9 @@ public class GameManagerScript : MonoBehaviour
         ResumeGame();
     }
 
-    public void LoadNextLevel()
+    public IEnumerator LoadNextLevel(float delay)
     {
+        yield return new WaitForSecondsRealtime(delay);
         if (taskLevel1.activeInHierarchy &&
             taskLevel2.activeInHierarchy &&
             taskLevel3.activeInHierarchy)
